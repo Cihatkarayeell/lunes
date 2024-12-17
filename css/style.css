@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     justify-content: flex-start;
     backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px); 
     margin-inline: 20px;
     margin-top: 10px;
     padding-inline: 20px;
@@ -131,6 +132,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .header .brand-logo{
     height: 52px;
+    z-index: 3;
+    position: relative;
 }
 .header .brand-logo img{
     height: 100%;
