@@ -1,0 +1,254 @@
+/* Reset CSS */
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Work Sans", serif;
+}
+
+/* Remove list styles */
+ol, ul, li {
+    list-style: none;
+}
+
+/* Remove default table spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Reset images */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Reset form elements */
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Remove text decorations */
+abbr[title] {
+    text-decoration: none;
+}
+
+/* Reset typography */
+h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, 
+    *::before, 
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+.section{
+    width: 100%;
+    height: 100%;
+}
+.backdrop{
+    background: url(/img/background/hero-backdrop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: auto;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    backdrop-filter: blur(80px);
+    margin-inline: 20px;
+    margin-top: 10px;
+    padding-inline: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px 0 rgb(200,182,166,.5);
+    background-color: rgb(255, 255, 255,.5);
+}
+.header .brand-logo{
+    height: 52px;
+}
+.header .brand-logo img{
+    height: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .call-btn{
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .call-btn::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+.header .call-btn:hover::before{
+    width: 9em;
+}
+.body{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-inline:5%;
+    height: calc(100% - 100px);
+}
+.main-title{
+    font-size: 40px;
+    font-weight: 300;
+    color:#231f1f;
+    line-height: normal;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+.subtitle{
+    font-size: 32px;
+    font-weight: 300;
+    color: #231f1f;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+.block{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.services{
+    overflow: hidden;
+    padding: 25px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px 0;
+    backdrop-filter: blur(9px);
+}
+.services .service-item{
+    font-size: 20px;
+    line-height: normal;
+    color: #231f1f;
+    font-weight: 400;
+    position: relative;
+    padding-left: 15px;
+}
+.services .service-item:before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #231f1f;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.block-img{
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.block-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.signature{
+    font-family: "Meow Script", cursive;
+    font-size: 32px;
+    color: #231f1f;
+    margin-top: 10px;
+}
+@media (max-width:1024px) {
+    .block{
+        flex-direction: column;
+        gap: 20px 0;
+        margin-bottom: 50px;
+    }
+    .header .call-btn:hover::before{
+        display: none;
+    }
+}
